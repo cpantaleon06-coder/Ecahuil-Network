@@ -12,3 +12,7 @@ export * from './contribution.js';
 export * from './ledger.js';
 export * from './appeal.js';
 export * from './fund-state.js';
+export { ContractViolationError } from './ports/contract-violation.js';
+export * from './ports/payments.js';
+export * from './ports/evidence-source.js';
+export * from './ports/reasoner.js';

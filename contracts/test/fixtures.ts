@@ -1,17 +1,23 @@
 // Valid, fully synthetic examples of every contract type. Tests derive invalid variants from them.
 import type {
   Appeal,
+  AssessRequest,
   Assessment,
+  Balance,
   Claim,
+  CollectContributionRequest,
   Contribution,
   Coverage,
   Decision,
   Evidence,
   FundState,
+  IndependentEvidence,
   LedgerEntry,
   LossEstimate,
   Member,
   Payout,
+  PayoutBatch,
+  PayoutRequest,
   Verification,
 } from '../src/index.js';
 
@@ -58,7 +64,7 @@ export const photo: Evidence = {
   attributes: { fileName: 'barriers.jpg' },
 };
 
-export const roadClosureReport: Evidence = {
+export const roadClosureReport: IndependentEvidence = {
   id: 'ev-0003',
   kind: 'road_closure_report',
   summary: 'Traffic feed reports a full closure of the avenue from 06:45 to 15:30.',
@@ -178,4 +184,35 @@ export const fundState: FundState = {
   errorBudgetRemainingCents: 17_500,
   solvencyRatio: 1.32,
   pendingExitsCents: 0,
+};
+
+export const collectContributionRequest: CollectContributionRequest = {
+  memberId: member.id,
+  amountCents: 300,
+  idempotencyKey: 'contribution-2026-w37-mem-0001',
+};
+
+export const payoutRequest: PayoutRequest = {
+  claimId: claim.id,
+  memberId: member.id,
+  receiverEmail: member.paypalEmail,
+  amountCents: 3_000,
+};
+
+export const payoutBatch: PayoutBatch = {
+  batchId: 'BATCH-0001',
+  payouts: [payout],
+};
+
+export const balance: Balance = {
+  availableCents: 450_000,
+  asOf: '2026-09-15T10:00:00Z',
+};
+
+export const assessRequest: AssessRequest = {
+  member,
+  coverage,
+  claim,
+  verification,
+  lossEstimate,
 };

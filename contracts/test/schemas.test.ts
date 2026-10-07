@@ -337,6 +337,88 @@ const cases: Record<SchemaName, SchemaCase> = {
       'negative solvency': { ...fx.fundState, solvencyRatio: -0.1 },
     },
   },
+
+  IdempotencyKeySchema: {
+    valid: ['batch-2b6f0e1c-8a4f-4c55-9a52-1d2f3e4a5b6c', 'k'],
+    invalid: { empty: '', 'too long': 'k'.repeat(65), whitespace: 'batch 1' },
+  },
+  CollectContributionRequestSchema: {
+    valid: [fx.collectContributionRequest],
+    invalid: {
+      'zero amount': { ...fx.collectContributionRequest, amountCents: 0 },
+      'missing key': without(fx.collectContributionRequest, 'idempotencyKey'),
+    },
+  },
+  CollectContributionResultSchema: {
+    valid: [{ contribution: fx.contribution }],
+    invalid: {
+      'bare contribution': fx.contribution,
+      'invalid contribution': { contribution: { ...fx.contribution, status: 'done' } },
+    },
+  },
+  PayoutRequestSchema: {
+    valid: [fx.payoutRequest],
+    invalid: {
+      'invalid receiver': { ...fx.payoutRequest, receiverEmail: 'vendor' },
+      'zero amount': { ...fx.payoutRequest, amountCents: 0 },
+    },
+  },
+  PayoutRequestListSchema: {
+    valid: [[fx.payoutRequest], [fx.payoutRequest, { ...fx.payoutRequest, claimId: 'clm-0002' }]],
+    invalid: { empty: [], 'invalid item': [{ ...fx.payoutRequest, amountCents: -1 }] },
+  },
+  PayoutBatchSchema: {
+    valid: [fx.payoutBatch],
+    invalid: {
+      'no payouts': { ...fx.payoutBatch, payouts: [] },
+      'payout from another batch': {
+        ...fx.payoutBatch,
+        payouts: [{ ...fx.payout, providerBatchId: 'BATCH-0002' }],
+      },
+      'payout without batch id': {
+        ...fx.payoutBatch,
+        payouts: [without(fx.payout, 'providerBatchId')],
+      },
+    },
+  },
+  PayoutBatchLookupSchema: {
+    valid: [fx.payoutBatch, null],
+    invalid: { undefined: undefined, 'no payouts': { ...fx.payoutBatch, payouts: [] } },
+  },
+  BalanceSchema: {
+    valid: [fx.balance, { ...fx.balance, availableCents: 0 }],
+    invalid: {
+      'negative balance': { ...fx.balance, availableCents: -1 },
+      'decimal string': { ...fx.balance, availableCents: '4500.00' },
+      'missing asOf': without(fx.balance, 'asOf'),
+    },
+  },
+
+  IndependentEvidenceSchema: {
+    valid: [fx.roadClosureReport],
+    invalid: { 'member submitted': fx.photo },
+  },
+  CorroborationSchema: {
+    valid: [[], [fx.roadClosureReport]],
+    invalid: { 'member submitted item': [fx.memberStatement] },
+  },
+
+  AssessRequestSchema: {
+    valid: [fx.assessRequest],
+    invalid: {
+      'claim of another member': { ...fx.assessRequest, member: { ...fx.member, id: 'mem-0002' } },
+      'other coverage': { ...fx.assessRequest, coverage: { ...fx.coverage, id: 'cov-other' } },
+      'verification of another claim': {
+        ...fx.assessRequest,
+        verification: { ...fx.verification, claimId: 'clm-0002' },
+      },
+      'loss estimate of another claim': {
+        ...fx.assessRequest,
+        lossEstimate: { ...fx.lossEstimate, claimId: 'clm-0002' },
+      },
+      'missing verification': without(fx.assessRequest, 'verification'),
+    },
+  },
 };
 
 describe('contract schemas', () => {
