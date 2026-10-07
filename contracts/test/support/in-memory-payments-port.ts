@@ -7,8 +7,8 @@ import type {
   Payout,
   PayoutBatch,
   PayoutBatchLookup,
-  PayoutRequest,
   PayoutStatus,
+  SendPayoutsRequest,
 } from '../../src/index.js';
 
 interface StoredBatch {
@@ -48,7 +48,7 @@ export class InMemoryPaymentsPort implements PaymentsPort {
     return Promise.resolve({ contribution: { ...contribution } });
   }
 
-  sendPayouts(requests: readonly PayoutRequest[], idempotencyKey: string): Promise<PayoutBatch> {
+  sendPayouts({ requests, idempotencyKey }: SendPayoutsRequest): Promise<PayoutBatch> {
     const existingId = this.#batchIdsByKey.get(idempotencyKey);
     if (existingId !== undefined) {
       return Promise.resolve(this.#view(this.#mustGet(existingId)));

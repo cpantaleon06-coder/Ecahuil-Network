@@ -38,8 +38,11 @@ export const PayoutRequestSchema = z.object({
 });
 export type PayoutRequest = z.infer<typeof PayoutRequestSchema>;
 
-/** The `requests` argument of `sendPayouts`. */
-export const PayoutRequestListSchema = z.array(PayoutRequestSchema).min(1);
+export const SendPayoutsRequestSchema = z.object({
+  requests: z.array(PayoutRequestSchema).min(1),
+  idempotencyKey: IdempotencyKeySchema,
+});
+export type SendPayoutsRequest = z.infer<typeof SendPayoutsRequestSchema>;
 
 /** Result of `sendPayouts`. Every payout carries the batch id as `providerBatchId`. */
 export const PayoutBatchSchema = z
@@ -83,10 +86,7 @@ export interface PaymentsPort {
    * Sends one payout per request in a single batch; `payouts[i]` answers `requests[i]`. It does
    * not reject for lack of funds: an item that exceeds the available balance ends as `failed`.
    */
-  sendPayouts(
-    requests: readonly PayoutRequest[],
-    idempotencyKey: IdempotencyKey,
-  ): Promise<PayoutBatch>;
+  sendPayouts(request: SendPayoutsRequest): Promise<PayoutBatch>;
 
   getPayoutStatus(batchId: ProviderRef): Promise<PayoutBatchLookup>;
 
@@ -120,24 +120,23 @@ export function guardPaymentsPort(port: PaymentsPort): PaymentsPort {
       return result;
     },
 
-    async sendPayouts(requests, idempotencyKey) {
+    async sendPayouts(request) {
       const location = 'PaymentsPort.sendPayouts';
-      const validRequests = parseOrThrow(PayoutRequestListSchema, requests, `${location} request`);
-      const validKey = parseOrThrow(IdempotencyKeySchema, idempotencyKey, `${location} request`);
+      const valid = parseOrThrow(SendPayoutsRequestSchema, request, `${location} request`);
       const batch = parseOrThrow(
         PayoutBatchSchema,
-        await port.sendPayouts(validRequests, validKey),
+        await port.sendPayouts(valid),
         `${location} result`,
       );
       const matches =
-        batch.payouts.length === validRequests.length &&
-        validRequests.every((request, index) => {
+        batch.payouts.length === valid.requests.length &&
+        valid.requests.every((item, index) => {
           const payout = batch.payouts[index];
           return (
             payout !== undefined &&
-            payout.claimId === request.claimId &&
-            payout.memberId === request.memberId &&
-            payout.amountCents === request.amountCents
+            payout.claimId === item.claimId &&
+            payout.memberId === item.memberId &&
+            payout.amountCents === item.amountCents
           );
         });
       if (!matches) {

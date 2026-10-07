@@ -83,14 +83,14 @@ On the funding side, members pay a `Contribution` every week through
 
 Each port method has a schema for its arguments and one for its result.
 
-| Port                 | Method                                                            | Argument schemas                                  | Result schema                     |
-| -------------------- | ----------------------------------------------------------------- | ------------------------------------------------- | --------------------------------- |
-| `PaymentsPort`       | `collectContribution(request)`                                    | `CollectContributionRequestSchema`                | `CollectContributionResultSchema` |
-|                      | `sendPayouts(requests, idempotencyKey)`                           | `PayoutRequestListSchema`, `IdempotencyKeySchema` | `PayoutBatchSchema`               |
-|                      | `getPayoutStatus(batchId)`                                        | `ProviderRefSchema`                               | `PayoutBatchLookupSchema`         |
-|                      | `getBalance()`                                                    | (none)                                            | `BalanceSchema`                   |
-| `EvidenceSourcePort` | `corroborate(claim)`                                              | `ClaimSchema`                                     | `CorroborationSchema`             |
-| `ReasonerPort`       | `assess({ member, coverage, claim, verification, lossEstimate })` | `AssessRequestSchema`                             | `AssessmentSchema`                |
+| Port                 | Method                                                            | Argument schemas                   | Result schema                     |
+| -------------------- | ----------------------------------------------------------------- | ---------------------------------- | --------------------------------- |
+| `PaymentsPort`       | `collectContribution(request)`                                    | `CollectContributionRequestSchema` | `CollectContributionResultSchema` |
+|                      | `sendPayouts({ requests, idempotencyKey })`                       | `SendPayoutsRequestSchema`         | `PayoutBatchSchema`               |
+|                      | `getPayoutStatus(batchId)`                                        | `ProviderRefSchema`                | `PayoutBatchLookupSchema`         |
+|                      | `getBalance()`                                                    | (none)                             | `BalanceSchema`                   |
+| `EvidenceSourcePort` | `corroborate(claim)`                                              | `ClaimSchema`                      | `CorroborationSchema`             |
+| `ReasonerPort`       | `assess({ member, coverage, claim, verification, lossEstimate })` | `AssessRequestSchema`              | `AssessmentSchema`                |
 
 `PaymentsPort` semantics, which every implementation must honour:
 

@@ -18,6 +18,7 @@ import type {
   Payout,
   PayoutBatch,
   PayoutRequest,
+  SendPayoutsRequest,
   Verification,
 } from '../src/index.js';
 
@@ -197,6 +198,11 @@ export const payoutRequest: PayoutRequest = {
   memberId: member.id,
   receiverEmail: member.paypalEmail,
   amountCents: 3_000,
+};
+
+export const sendPayoutsRequest: SendPayoutsRequest = {
+  requests: [payoutRequest],
+  idempotencyKey: 'payouts-2026-09-15-batch-1',
 };
 
 export const payoutBatch: PayoutBatch = {

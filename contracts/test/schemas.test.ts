@@ -363,9 +363,23 @@ const cases: Record<SchemaName, SchemaCase> = {
       'zero amount': { ...fx.payoutRequest, amountCents: 0 },
     },
   },
-  PayoutRequestListSchema: {
-    valid: [[fx.payoutRequest], [fx.payoutRequest, { ...fx.payoutRequest, claimId: 'clm-0002' }]],
-    invalid: { empty: [], 'invalid item': [{ ...fx.payoutRequest, amountCents: -1 }] },
+  SendPayoutsRequestSchema: {
+    valid: [
+      fx.sendPayoutsRequest,
+      {
+        ...fx.sendPayoutsRequest,
+        requests: [fx.payoutRequest, { ...fx.payoutRequest, claimId: 'clm-0002' }],
+      },
+    ],
+    invalid: {
+      'no requests': { ...fx.sendPayoutsRequest, requests: [] },
+      'invalid item': {
+        ...fx.sendPayoutsRequest,
+        requests: [{ ...fx.payoutRequest, amountCents: -1 }],
+      },
+      'missing key': without(fx.sendPayoutsRequest, 'idempotencyKey'),
+      'positional array': [fx.payoutRequest],
+    },
   },
   PayoutBatchSchema: {
     valid: [fx.payoutBatch],

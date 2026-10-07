@@ -17,7 +17,7 @@ describe('guardPaymentsPort', () => {
     const port = guardPaymentsPort(new InMemoryPaymentsPort(10_000));
 
     const { contribution } = await port.collectContribution(fx.collectContributionRequest);
-    const batch = await port.sendPayouts([fx.payoutRequest], 'batch-1');
+    const batch = await port.sendPayouts(fx.sendPayoutsRequest);
 
     expect(contribution.amountCents).toBe(fx.collectContributionRequest.amountCents);
     expect(batch.payouts).toHaveLength(1);
@@ -32,14 +32,17 @@ describe('guardPaymentsPort', () => {
     const port = guardPaymentsPort(inner);
 
     const error: unknown = await port
-      .sendPayouts([{ ...fx.payoutRequest, amountCents: 10.5 }], 'batch-1')
+      .sendPayouts({
+        ...fx.sendPayoutsRequest,
+        requests: [{ ...fx.payoutRequest, amountCents: 10.5 }],
+      })
       .catch((reason: unknown) => reason);
 
     expect(error).toBeInstanceOf(ContractViolationError);
     expect((error as ContractViolationError).cause).toBeInstanceOf(ZodError);
-    await expect(port.sendPayouts([fx.payoutRequest], 'not a key')).rejects.toThrow(
-      'PaymentsPort.sendPayouts request',
-    );
+    await expect(
+      port.sendPayouts({ ...fx.sendPayoutsRequest, idempotencyKey: 'not a key' }),
+    ).rejects.toThrow('PaymentsPort.sendPayouts request');
     expect(sendPayouts).not.toHaveBeenCalled();
   });
 
@@ -50,12 +53,12 @@ describe('guardPaymentsPort', () => {
         const result = await inner.collectContribution(request);
         return { contribution: { ...result.contribution, amountCents: request.amountCents + 1 } };
       },
-      sendPayouts: async (requests, key) => {
-        const batch = await inner.sendPayouts(requests, key);
+      sendPayouts: async (request) => {
+        const batch = await inner.sendPayouts(request);
         return { ...batch, payouts: [...batch.payouts].reverse() };
       },
       getPayoutStatus: async () =>
-        inner.getPayoutStatus((await inner.sendPayouts([fx.payoutRequest], 'other')).batchId),
+        inner.getPayoutStatus((await inner.sendPayouts(fx.sendPayoutsRequest)).batchId),
       getBalance: () => Promise.resolve({ availableCents: -1, asOf: '2026-10-07T00:00:00Z' }),
     } satisfies PaymentsPort);
 
@@ -63,7 +66,10 @@ describe('guardPaymentsPort', () => {
       'does not match the request',
     );
     await expect(
-      port.sendPayouts([fx.payoutRequest, { ...fx.payoutRequest, claimId: 'clm-0002' }], 'b-1'),
+      port.sendPayouts({
+        requests: [fx.payoutRequest, { ...fx.payoutRequest, claimId: 'clm-0002' }],
+        idempotencyKey: 'b-1',
+      }),
     ).rejects.toThrow('payouts[i] must answer requests[i]');
     await expect(port.getPayoutStatus('batch-requested')).rejects.toThrow('different batch');
     await expect(port.getBalance()).rejects.toThrow('PaymentsPort.getBalance result');

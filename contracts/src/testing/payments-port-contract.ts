@@ -34,7 +34,7 @@ const DEFAULT_MEMBER = {
  * port whose available balance is at least four times `amountCents`; it is called once per test.
  *
  * @example
- * runPaymentsPortContract(() => new InMemoryPaymentsPort({ initialBalanceCents: 10_000 }));
+ * runPaymentsPortContract(() => new SandboxPaymentsPort(freshSandboxAccount()));
  */
 export function runPaymentsPortContract(
   factory: PaymentsPortFactory,
@@ -69,7 +69,7 @@ export function runPaymentsPortContract(
     requests: PayoutRequest[],
     idempotencyKey = newKey('batch'),
   ): Promise<PayoutBatch> {
-    return PayoutBatchSchema.parse(await port.sendPayouts(requests, idempotencyKey));
+    return PayoutBatchSchema.parse(await port.sendPayouts({ requests, idempotencyKey }));
   }
 
   /** Polls getPayoutStatus until no payout in the batch is pending. */
