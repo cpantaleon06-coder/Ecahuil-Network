@@ -1,0 +1,27 @@
+{
+  "name": "@ecahuil/sim",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Synthetic members, claims and fund simulations for Ecahuil Network.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "@ecahuil/source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@ecahuil/contracts": "workspace:*"
+  }
+}
