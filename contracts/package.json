@@ -10,6 +10,11 @@
       "@ecahuil/source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./testing": {
+      "@ecahuil/source": "./src/testing/index.ts",
+      "types": "./dist/testing/index.d.ts",
+      "default": "./dist/testing/index.js"
     }
   },
   "files": [
@@ -23,6 +28,14 @@
   },
   "dependencies": {
     "zod": "^4.6.5"
+  },
+  "peerDependencies": {
+    "vitest": "^5.0.3"
+  },
+  "peerDependenciesMeta": {
+    "vitest": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "vitest": "^5.0.3"
