@@ -5,9 +5,8 @@
 1. **English only.** Code, identifiers, comments, commit messages, docs, tests, issues and pull
    requests are all written in English.
 2. **Contracts first.** `contracts/` is the shared language between packages. Any change to
-   `contracts/` goes in its own pull request with no other changes, and is announced to the other
-   contributors before it is merged. Implementations that depend on the change follow in separate
-   pull requests.
+   `contracts/` goes in its own pull request, separate from the implementation work that depends
+   on it, and is announced to the other contributors before it is merged.
 3. **One branch per task, small pull requests.** Name branches after the task (for example
    `c3-claims-pipeline`). Keep commits small, with short imperative messages ("Add claim schema").
 4. **Only `packages/core` talks to PayPal.** Every other package goes through the ports defined in
