@@ -20,13 +20,21 @@ import type {
   PayoutRequest,
   SendPayoutsRequest,
   Verification,
+  Zone,
 } from '../src/index.js';
+
+export const zone: Zone = {
+  id: 'zone-centro',
+  name: 'Centro',
+  timezone: 'America/Mexico_City',
+  centroid: { latitude: 19.4326, longitude: -99.1332 },
+};
 
 export const member: Member = {
   id: 'mem-0001',
   displayName: 'Synthetic Vendor 01',
   occupation: 'street_vendor',
-  zoneId: 'zone-centro',
+  zoneId: zone.id,
   paypalEmail: 'vendor.0001@example.com',
   joinedAt: '2026-03-02T09:00:00-06:00',
   contributionCentsPerWeek: 300,

@@ -75,6 +75,31 @@ const cases: Record<SchemaName, SchemaCase> = {
     invalid: { unknown: 'very_high', uppercase: 'HIGH' },
   },
 
+  TimeZoneSchema: {
+    valid: ['America/Mexico_City', 'America/Argentina/Buenos_Aires', 'UTC', 'Etc/GMT+5'],
+    invalid: {
+      'offset with colon': '+05:00',
+      'offset without colon': '-0300',
+      'unknown zone': 'Mars/Olympus',
+      'unknown city': 'America/Not_A_City',
+      'leading space': ' America/Bogota',
+      empty: '',
+      number: -5,
+    },
+  },
+  ZoneSchema: {
+    valid: [fx.zone, { ...fx.zone, timezone: 'UTC', centroid: { latitude: -90, longitude: 180 } }],
+    invalid: {
+      'unknown timezone': { ...fx.zone, timezone: 'Mars/Olympus' },
+      'offset timezone': { ...fx.zone, timezone: '-06:00' },
+      'blank name': { ...fx.zone, name: ' ' },
+      'latitude out of range': { ...fx.zone, centroid: { latitude: 90.5, longitude: 0 } },
+      'longitude out of range': { ...fx.zone, centroid: { latitude: 0, longitude: -180.5 } },
+      'missing centroid': without(fx.zone, 'centroid'),
+      'invalid id': { ...fx.zone, id: 'zone centro' },
+    },
+  },
+
   OccupationSchema: {
     valid: ['delivery_courier', 'construction_worker', 'street_vendor', 'other'],
     invalid: { unknown: 'taxi_driver', empty: '' },

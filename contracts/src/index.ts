@@ -1,4 +1,5 @@
 export * from './primitives.js';
+export * from './zone.js';
 export * from './member.js';
 export * from './coverage.js';
 export * from './evidence.js';

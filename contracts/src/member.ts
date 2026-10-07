@@ -11,7 +11,7 @@ export const OccupationSchema = z.enum([
 export type Occupation = z.infer<typeof OccupationSchema>;
 
 /**
- * Usual working hours in the local time of the member's zone.
+ * Usual working hours in the local time of the member's zone (`Zone.timezone`).
  * `days` uses 0 = Sunday to 6 = Saturday. `endHour` is exclusive and may be 24.
  * When `endHour` is lower than `startHour` the shift crosses midnight (e.g. 22 to 6).
  */
@@ -41,6 +41,7 @@ export const MemberSchema = z.object({
   id: IdSchema,
   displayName: text(80),
   occupation: OccupationSchema,
+  /** Id of the member's `Zone`. */
   zoneId: IdSchema,
   /** Synthetic or sandbox address that receives payouts. */
   paypalEmail: z.email(),
