@@ -319,12 +319,20 @@ const cases: Record<SchemaName, SchemaCase> = {
     valid: ['contribution', 'payout', 'yield', 'adjustment'],
     invalid: { unknown: 'fee' },
   },
+  LedgerEntryDirectionSchema: {
+    valid: ['credit', 'debit'],
+    invalid: { unknown: 'in', uppercase: 'CREDIT' },
+  },
   LedgerEntrySchema: {
     valid: [
       fx.ledgerEntry,
+      { ...fx.ledgerEntry, kind: 'yield', direction: 'credit', note: 'Simulated yield' },
+      { ...fx.ledgerEntry, kind: 'adjustment', direction: 'credit' },
+      { ...fx.ledgerEntry, kind: 'adjustment', direction: 'debit' },
       {
         ...without(fx.ledgerEntry, 'claimId'),
         kind: 'contribution',
+        direction: 'credit',
         amountCents: 300,
         note: '',
       },
@@ -332,6 +340,11 @@ const cases: Record<SchemaName, SchemaCase> = {
     invalid: {
       'negative amount': { ...fx.ledgerEntry, amountCents: -3_000 },
       'payout without claim': without(fx.ledgerEntry, 'claimId'),
+      'payout as credit': { ...fx.ledgerEntry, direction: 'credit' },
+      'contribution as debit': { ...fx.ledgerEntry, kind: 'contribution', direction: 'debit' },
+      'yield as debit': { ...fx.ledgerEntry, kind: 'yield', direction: 'debit' },
+      'unknown direction': { ...fx.ledgerEntry, kind: 'adjustment', direction: 'out' },
+      'missing direction': without(fx.ledgerEntry, 'direction'),
       'blank pseudonym': { ...fx.ledgerEntry, pseudonym: '' },
       'note too long': { ...fx.ledgerEntry, note: 'x'.repeat(281) },
     },

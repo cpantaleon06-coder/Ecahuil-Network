@@ -18,7 +18,7 @@ export const ProviderRefSchema = z
   .regex(/^\S{1,128}$/, 'Expected a provider reference without whitespace (max 128 characters)');
 export type ProviderRef = z.infer<typeof ProviderRefSchema>;
 
-/** Money in integer USD cents. Never negative: the field or record kind gives the direction. */
+/** Money in integer USD cents. Never negative: the field name or the record says the direction. */
 export const CentsSchema = z.int().nonnegative();
 export type Cents = z.infer<typeof CentsSchema>;
 

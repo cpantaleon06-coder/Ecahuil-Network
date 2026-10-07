@@ -170,6 +170,7 @@ export const ledgerEntry: LedgerEntry = {
   id: 'led-0001',
   at: '2026-09-15T10:00:00Z',
   kind: 'payout',
+  direction: 'debit',
   amountCents: 3_000,
   pseudonym: 'vendor-7f3a',
   claimId: claim.id,
