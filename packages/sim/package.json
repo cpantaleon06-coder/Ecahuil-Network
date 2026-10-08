@@ -19,7 +19,8 @@
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json",
     "lint": "eslint .",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "generate:members": "pnpm --filter @ecahuil/sim... run build && node dist/cli/generate-members.js"
   },
   "dependencies": {
     "@ecahuil/contracts": "workspace:*"

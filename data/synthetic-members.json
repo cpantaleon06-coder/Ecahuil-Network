@@ -1,0 +1,2307 @@
+[
+  {
+    "id": "member-001",
+    "displayName": "Builder 001",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-001@example.invalid",
+    "joinedAt": "2025-12-14T18:30:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 2700,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.36114,
+        "longitude": -99.17053,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-002",
+    "displayName": "Builder 002",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-002@example.invalid",
+    "joinedAt": "2025-11-23T15:40:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3650,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.3462,
+        "longitude": -99.0569,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-003",
+    "displayName": "Courier 003",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-003@example.invalid",
+    "joinedAt": "2026-04-09T18:02:00-06:00",
+    "contributionCentsPerWeek": 425,
+    "baselineDailyIncomeCents": 3500,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.34373,
+        "longitude": -99.15759,
+        "label": "Shopping mall pickup point"
+      },
+      {
+        "latitude": 19.32352,
+        "longitude": -99.17359,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-004",
+    "displayName": "Worker 004",
+    "occupation": "other",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-004@example.invalid",
+    "joinedAt": "2026-05-23T14:11:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 2500,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 14,
+      "endHour": 22
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43557,
+        "longitude": -99.21238,
+        "label": "Household where the member works"
+      }
+    ]
+  },
+  {
+    "id": "member-005",
+    "displayName": "Courier 005",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-005@example.invalid",
+    "joinedAt": "2026-06-04T09:58:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 2700,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43988,
+        "longitude": -99.10461,
+        "label": "Shopping mall pickup point"
+      },
+      {
+        "latitude": 19.42115,
+        "longitude": -99.09946,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-006",
+    "displayName": "Vendor 006",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-006@example.invalid",
+    "joinedAt": "2026-02-10T13:15:00-06:00",
+    "contributionCentsPerWeek": 200,
+    "baselineDailyIncomeCents": 2600,
+    "workSchedule": {
+      "days": [0, 3, 5, 6],
+      "startHour": 9,
+      "endHour": 20
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49012,
+        "longitude": -99.12377,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-007",
+    "displayName": "Courier 007",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-007@example.invalid",
+    "joinedAt": "2026-05-03T15:28:00-06:00",
+    "contributionCentsPerWeek": 475,
+    "baselineDailyIncomeCents": 4050,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.37237,
+        "longitude": -99.15874,
+        "label": "Delivery app hub"
+      },
+      {
+        "latitude": 19.37052,
+        "longitude": -99.15568,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-008",
+    "displayName": "Courier 008",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-008@example.invalid",
+    "joinedAt": "2026-09-05T11:37:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 2750,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.44508,
+        "longitude": -99.15114,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-009",
+    "displayName": "Vendor 009",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-009@example.invalid",
+    "joinedAt": "2026-06-18T15:56:00-06:00",
+    "contributionCentsPerWeek": 425,
+    "baselineDailyIncomeCents": 3000,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 20
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49499,
+        "longitude": -99.18562,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-010",
+    "displayName": "Builder 010",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-010@example.invalid",
+    "joinedAt": "2026-05-11T19:39:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 2600,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49953,
+        "longitude": -99.17062,
+        "label": "Residential construction site"
+      }
+    ]
+  },
+  {
+    "id": "member-011",
+    "displayName": "Courier 011",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-011@example.invalid",
+    "joinedAt": "2025-10-13T14:52:00-06:00",
+    "contributionCentsPerWeek": 500,
+    "baselineDailyIncomeCents": 4200,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49538,
+        "longitude": -99.10172,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-012",
+    "displayName": "Builder 012",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-012@example.invalid",
+    "joinedAt": "2026-02-14T17:03:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 3400,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41414,
+        "longitude": -99.20782,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-013",
+    "displayName": "Courier 013",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-013@example.invalid",
+    "joinedAt": "2025-10-06T17:52:00-06:00",
+    "contributionCentsPerWeek": 475,
+    "baselineDailyIncomeCents": 3950,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5],
+      "startHour": 11,
+      "endHour": 22
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.34763,
+        "longitude": -99.06223,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-014",
+    "displayName": "Vendor 014",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-014@example.invalid",
+    "joinedAt": "2026-04-12T21:10:00-06:00",
+    "contributionCentsPerWeek": 275,
+    "baselineDailyIncomeCents": 3500,
+    "workSchedule": {
+      "days": [0, 3, 5, 6],
+      "startHour": 9,
+      "endHour": 20
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48784,
+        "longitude": -99.19776,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-015",
+    "displayName": "Vendor 015",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-015@example.invalid",
+    "joinedAt": "2025-12-01T21:10:00-06:00",
+    "contributionCentsPerWeek": 375,
+    "baselineDailyIncomeCents": 3150,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49538,
+        "longitude": -99.10375,
+        "label": "Open-air market stall"
+      }
+    ]
+  },
+  {
+    "id": "member-016",
+    "displayName": "Worker 016",
+    "occupation": "other",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-016@example.invalid",
+    "joinedAt": "2025-11-04T20:00:00-06:00",
+    "contributionCentsPerWeek": 375,
+    "baselineDailyIncomeCents": 3050,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 8,
+      "endHour": 16
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41904,
+        "longitude": -99.14928,
+        "label": "Repair workshop"
+      }
+    ]
+  },
+  {
+    "id": "member-017",
+    "displayName": "Courier 017",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-017@example.invalid",
+    "joinedAt": "2025-12-12T18:39:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 2650,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.4165,
+        "longitude": -99.09622,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-018",
+    "displayName": "Builder 018",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-018@example.invalid",
+    "joinedAt": "2025-12-11T09:42:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 3000,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49198,
+        "longitude": -99.19154,
+        "label": "Residential construction site"
+      }
+    ]
+  },
+  {
+    "id": "member-019",
+    "displayName": "Courier 019",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-019@example.invalid",
+    "joinedAt": "2026-08-22T17:20:00-06:00",
+    "contributionCentsPerWeek": 375,
+    "baselineDailyIncomeCents": 3200,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.38428,
+        "longitude": -99.15775,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-020",
+    "displayName": "Courier 020",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-020@example.invalid",
+    "joinedAt": "2025-10-08T16:36:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2450,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.44766,
+        "longitude": -99.15748,
+        "label": "Restaurant pickup area"
+      },
+      {
+        "latitude": 19.4469,
+        "longitude": -99.15828,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-021",
+    "displayName": "Vendor 021",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-021@example.invalid",
+    "joinedAt": "2026-05-17T11:30:00-06:00",
+    "contributionCentsPerWeek": 225,
+    "baselineDailyIncomeCents": 2900,
+    "workSchedule": {
+      "days": [0, 3, 5, 6],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48594,
+        "longitude": -99.11162,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-022",
+    "displayName": "Builder 022",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-022@example.invalid",
+    "joinedAt": "2026-08-08T13:37:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 3550,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48365,
+        "longitude": -99.18236,
+        "label": "Residential construction site"
+      }
+    ]
+  },
+  {
+    "id": "member-023",
+    "displayName": "Vendor 023",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-023@example.invalid",
+    "joinedAt": "2026-01-28T07:07:00-06:00",
+    "contributionCentsPerWeek": 275,
+    "baselineDailyIncomeCents": 2300,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49447,
+        "longitude": -99.11657,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-024",
+    "displayName": "Worker 024",
+    "occupation": "other",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-024@example.invalid",
+    "joinedAt": "2026-05-15T12:20:00-06:00",
+    "contributionCentsPerWeek": 225,
+    "baselineDailyIncomeCents": 2350,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 8,
+      "endHour": 16
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.33348,
+        "longitude": -99.16097,
+        "label": "Repair workshop"
+      }
+    ]
+  },
+  {
+    "id": "member-025",
+    "displayName": "Courier 025",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-025@example.invalid",
+    "joinedAt": "2026-03-20T09:39:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2550,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.37536,
+        "longitude": -99.15044,
+        "label": "Restaurant pickup area"
+      },
+      {
+        "latitude": 19.38521,
+        "longitude": -99.16084,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-026",
+    "displayName": "Courier 026",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-026@example.invalid",
+    "joinedAt": "2025-11-04T15:31:00-06:00",
+    "contributionCentsPerWeek": 525,
+    "baselineDailyIncomeCents": 3800,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43594,
+        "longitude": -99.13572,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-027",
+    "displayName": "Vendor 027",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-027@example.invalid",
+    "joinedAt": "2026-09-01T12:42:00-06:00",
+    "contributionCentsPerWeek": 475,
+    "baselineDailyIncomeCents": 3900,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.35609,
+        "longitude": -99.06678,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-028",
+    "displayName": "Worker 028",
+    "occupation": "other",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-028@example.invalid",
+    "joinedAt": "2026-05-04T14:31:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 2500,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 8,
+      "endHour": 16
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43687,
+        "longitude": -99.09785,
+        "label": "Repair workshop"
+      }
+    ]
+  },
+  {
+    "id": "member-029",
+    "displayName": "Worker 029",
+    "occupation": "other",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-029@example.invalid",
+    "joinedAt": "2025-11-14T12:45:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 2150,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 14,
+      "endHour": 22
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43081,
+        "longitude": -99.10146,
+        "label": "Repair workshop"
+      }
+    ]
+  },
+  {
+    "id": "member-030",
+    "displayName": "Builder 030",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-030@example.invalid",
+    "joinedAt": "2026-05-02T10:06:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 3150,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.44033,
+        "longitude": -99.10366,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-031",
+    "displayName": "Builder 031",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-031@example.invalid",
+    "joinedAt": "2026-08-16T09:50:00-06:00",
+    "contributionCentsPerWeek": 275,
+    "baselineDailyIncomeCents": 2800,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41659,
+        "longitude": -99.18584,
+        "label": "Commercial building site"
+      }
+    ]
+  },
+  {
+    "id": "member-032",
+    "displayName": "Builder 032",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-032@example.invalid",
+    "joinedAt": "2026-02-24T07:57:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 2400,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.37997,
+        "longitude": -99.16611,
+        "label": "Commercial building site"
+      }
+    ]
+  },
+  {
+    "id": "member-033",
+    "displayName": "Vendor 033",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-033@example.invalid",
+    "joinedAt": "2025-12-29T17:30:00-06:00",
+    "contributionCentsPerWeek": 550,
+    "baselineDailyIncomeCents": 4000,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 6,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.38168,
+        "longitude": -99.16666,
+        "label": "Open-air market stall"
+      }
+    ]
+  },
+  {
+    "id": "member-034",
+    "displayName": "Builder 034",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-034@example.invalid",
+    "joinedAt": "2026-09-14T17:37:00-06:00",
+    "contributionCentsPerWeek": 375,
+    "baselineDailyIncomeCents": 3850,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.31772,
+        "longitude": -99.15595,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-035",
+    "displayName": "Vendor 035",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-035@example.invalid",
+    "joinedAt": "2025-10-29T11:54:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 2850,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.34476,
+        "longitude": -99.1583,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-036",
+    "displayName": "Courier 036",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-036@example.invalid",
+    "joinedAt": "2026-09-12T18:08:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 2950,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.35081,
+        "longitude": -99.07153,
+        "label": "Restaurant pickup area"
+      },
+      {
+        "latitude": 19.34207,
+        "longitude": -99.06086,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-037",
+    "displayName": "Vendor 037",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-037@example.invalid",
+    "joinedAt": "2026-05-16T13:48:00-06:00",
+    "contributionCentsPerWeek": 425,
+    "baselineDailyIncomeCents": 3550,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.47673,
+        "longitude": -99.18724,
+        "label": "Open-air market stall"
+      }
+    ]
+  },
+  {
+    "id": "member-038",
+    "displayName": "Vendor 038",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-038@example.invalid",
+    "joinedAt": "2026-03-05T13:21:00-06:00",
+    "contributionCentsPerWeek": 275,
+    "baselineDailyIncomeCents": 2000,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 19,
+      "endHour": 2
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.35287,
+        "longitude": -99.05827,
+        "label": "Open-air market stall"
+      }
+    ]
+  },
+  {
+    "id": "member-039",
+    "displayName": "Vendor 039",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-039@example.invalid",
+    "joinedAt": "2026-07-12T09:27:00-06:00",
+    "contributionCentsPerWeek": 500,
+    "baselineDailyIncomeCents": 3650,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.35959,
+        "longitude": -99.06799,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-040",
+    "displayName": "Courier 040",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-040@example.invalid",
+    "joinedAt": "2026-03-31T19:16:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3650,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48479,
+        "longitude": -99.17605,
+        "label": "Delivery app hub"
+      },
+      {
+        "latitude": 19.48032,
+        "longitude": -99.17829,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-041",
+    "displayName": "Vendor 041",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-041@example.invalid",
+    "joinedAt": "2026-01-06T12:16:00-06:00",
+    "contributionCentsPerWeek": 375,
+    "baselineDailyIncomeCents": 3100,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 19,
+      "endHour": 2
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41621,
+        "longitude": -99.21411,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-042",
+    "displayName": "Builder 042",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-042@example.invalid",
+    "joinedAt": "2026-04-19T13:20:00-06:00",
+    "contributionCentsPerWeek": 275,
+    "baselineDailyIncomeCents": 2300,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 7,
+      "endHour": 17
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49428,
+        "longitude": -99.10726,
+        "label": "Commercial building site"
+      }
+    ]
+  },
+  {
+    "id": "member-043",
+    "displayName": "Worker 043",
+    "occupation": "other",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-043@example.invalid",
+    "joinedAt": "2026-05-07T21:17:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 3100,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 14,
+      "endHour": 22
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43033,
+        "longitude": -99.15267,
+        "label": "Household where the member works"
+      }
+    ]
+  },
+  {
+    "id": "member-044",
+    "displayName": "Vendor 044",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-044@example.invalid",
+    "joinedAt": "2026-09-26T20:54:00-06:00",
+    "contributionCentsPerWeek": 275,
+    "baselineDailyIncomeCents": 2250,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43584,
+        "longitude": -99.14975,
+        "label": "Open-air market stall"
+      }
+    ]
+  },
+  {
+    "id": "member-045",
+    "displayName": "Courier 045",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-045@example.invalid",
+    "joinedAt": "2026-06-23T09:14:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2200,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.47518,
+        "longitude": -99.18851,
+        "label": "Delivery app hub"
+      },
+      {
+        "latitude": 19.49907,
+        "longitude": -99.18556,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-046",
+    "displayName": "Courier 046",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-046@example.invalid",
+    "joinedAt": "2025-10-22T17:45:00-06:00",
+    "contributionCentsPerWeek": 400,
+    "baselineDailyIncomeCents": 3250,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.34173,
+        "longitude": -99.16032,
+        "label": "Shopping mall pickup point"
+      },
+      {
+        "latitude": 19.32258,
+        "longitude": -99.15651,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-047",
+    "displayName": "Builder 047",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-047@example.invalid",
+    "joinedAt": "2026-08-30T13:57:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3700,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 7,
+      "endHour": 17
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.49957,
+        "longitude": -99.12242,
+        "label": "Residential construction site"
+      }
+    ]
+  },
+  {
+    "id": "member-048",
+    "displayName": "Builder 048",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-048@example.invalid",
+    "joinedAt": "2026-04-25T19:24:00-06:00",
+    "contributionCentsPerWeek": 375,
+    "baselineDailyIncomeCents": 3100,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.429,
+        "longitude": -99.14896,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-049",
+    "displayName": "Vendor 049",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-049@example.invalid",
+    "joinedAt": "2025-11-01T20:17:00-06:00",
+    "contributionCentsPerWeek": 675,
+    "baselineDailyIncomeCents": 4850,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.32363,
+        "longitude": -99.14511,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-050",
+    "displayName": "Courier 050",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-050@example.invalid",
+    "joinedAt": "2026-05-23T12:45:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2500,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.32025,
+        "longitude": -99.15769,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-051",
+    "displayName": "Courier 051",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-051@example.invalid",
+    "joinedAt": "2025-12-19T17:48:00-06:00",
+    "contributionCentsPerWeek": 425,
+    "baselineDailyIncomeCents": 2950,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43654,
+        "longitude": -99.1609,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-052",
+    "displayName": "Builder 052",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-052@example.invalid",
+    "joinedAt": "2025-10-11T14:04:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2950,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 17
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.38076,
+        "longitude": -99.15871,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-053",
+    "displayName": "Vendor 053",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-053@example.invalid",
+    "joinedAt": "2025-10-01T19:47:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3250,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.3557,
+        "longitude": -99.07757,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-054",
+    "displayName": "Courier 054",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-054@example.invalid",
+    "joinedAt": "2026-06-24T18:57:00-06:00",
+    "contributionCentsPerWeek": 500,
+    "baselineDailyIncomeCents": 3500,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48481,
+        "longitude": -99.17425,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-055",
+    "displayName": "Vendor 055",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-055@example.invalid",
+    "joinedAt": "2026-05-16T11:58:00-06:00",
+    "contributionCentsPerWeek": 275,
+    "baselineDailyIncomeCents": 3500,
+    "workSchedule": {
+      "days": [0, 3, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.50406,
+        "longitude": -99.10331,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-056",
+    "displayName": "Courier 056",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-056@example.invalid",
+    "joinedAt": "2026-09-30T18:44:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 2950,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.44236,
+        "longitude": -99.13518,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-057",
+    "displayName": "Courier 057",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-057@example.invalid",
+    "joinedAt": "2026-02-12T10:44:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3850,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.3213,
+        "longitude": -99.1547,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-058",
+    "displayName": "Vendor 058",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-058@example.invalid",
+    "joinedAt": "2026-09-19T12:19:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 1800,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.44495,
+        "longitude": -99.14268,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-059",
+    "displayName": "Worker 059",
+    "occupation": "other",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-059@example.invalid",
+    "joinedAt": "2026-08-02T17:43:00-06:00",
+    "contributionCentsPerWeek": 225,
+    "baselineDailyIncomeCents": 2250,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41736,
+        "longitude": -99.20721,
+        "label": "Car wash"
+      }
+    ]
+  },
+  {
+    "id": "member-060",
+    "displayName": "Builder 060",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-060@example.invalid",
+    "joinedAt": "2026-08-28T21:42:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 3100,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 17
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.47552,
+        "longitude": -99.19405,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-061",
+    "displayName": "Builder 061",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-061@example.invalid",
+    "joinedAt": "2026-02-19T08:37:00-06:00",
+    "contributionCentsPerWeek": 400,
+    "baselineDailyIncomeCents": 3250,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.36621,
+        "longitude": -99.07399,
+        "label": "Commercial building site"
+      }
+    ]
+  },
+  {
+    "id": "member-062",
+    "displayName": "Vendor 062",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-062@example.invalid",
+    "joinedAt": "2026-03-31T11:30:00-06:00",
+    "contributionCentsPerWeek": 275,
+    "baselineDailyIncomeCents": 2050,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 6,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.34686,
+        "longitude": -99.07212,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-063",
+    "displayName": "Courier 063",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-063@example.invalid",
+    "joinedAt": "2026-04-05T16:07:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3750,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5],
+      "startHour": 11,
+      "endHour": 22
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.36137,
+        "longitude": -99.15651,
+        "label": "Shopping mall pickup point"
+      },
+      {
+        "latitude": 19.38629,
+        "longitude": -99.16321,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-064",
+    "displayName": "Courier 064",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-064@example.invalid",
+    "joinedAt": "2025-10-26T14:44:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 3000,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.344,
+        "longitude": -99.07928,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-065",
+    "displayName": "Vendor 065",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-065@example.invalid",
+    "joinedAt": "2026-05-20T10:55:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3750,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48096,
+        "longitude": -99.10409,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-066",
+    "displayName": "Courier 066",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-066@example.invalid",
+    "joinedAt": "2026-03-28T10:22:00-06:00",
+    "contributionCentsPerWeek": 375,
+    "baselineDailyIncomeCents": 3100,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.35382,
+        "longitude": -99.07594,
+        "label": "Shopping mall pickup point"
+      },
+      {
+        "latitude": 19.35487,
+        "longitude": -99.06988,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-067",
+    "displayName": "Worker 067",
+    "occupation": "other",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-067@example.invalid",
+    "joinedAt": "2026-07-28T16:27:00-06:00",
+    "contributionCentsPerWeek": 200,
+    "baselineDailyIncomeCents": 2050,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 8,
+      "endHour": 16
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.35965,
+        "longitude": -99.15612,
+        "label": "Repair workshop"
+      }
+    ]
+  },
+  {
+    "id": "member-068",
+    "displayName": "Builder 068",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-068@example.invalid",
+    "joinedAt": "2026-04-27T14:49:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 3050,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 17
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.42866,
+        "longitude": -99.20333,
+        "label": "Residential construction site"
+      }
+    ]
+  },
+  {
+    "id": "member-069",
+    "displayName": "Courier 069",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-069@example.invalid",
+    "joinedAt": "2025-12-08T09:07:00-06:00",
+    "contributionCentsPerWeek": 525,
+    "baselineDailyIncomeCents": 4300,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.50235,
+        "longitude": -99.10357,
+        "label": "Restaurant pickup area"
+      },
+      {
+        "latitude": 19.48951,
+        "longitude": -99.10856,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-070",
+    "displayName": "Builder 070",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-070@example.invalid",
+    "joinedAt": "2026-06-25T07:31:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 3200,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.44557,
+        "longitude": -99.15798,
+        "label": "Residential construction site"
+      }
+    ]
+  },
+  {
+    "id": "member-071",
+    "displayName": "Vendor 071",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-071@example.invalid",
+    "joinedAt": "2025-10-21T21:20:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 2550,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 6,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.37528,
+        "longitude": -99.16305,
+        "label": "Open-air market stall"
+      }
+    ]
+  },
+  {
+    "id": "member-072",
+    "displayName": "Vendor 072",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-072@example.invalid",
+    "joinedAt": "2026-03-29T10:46:00-06:00",
+    "contributionCentsPerWeek": 500,
+    "baselineDailyIncomeCents": 4200,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.4916,
+        "longitude": -99.10694,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-073",
+    "displayName": "Vendor 073",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-073@example.invalid",
+    "joinedAt": "2026-07-09T07:02:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 3150,
+    "workSchedule": {
+      "days": [0, 3, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41732,
+        "longitude": -99.10637,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-074",
+    "displayName": "Courier 074",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-074@example.invalid",
+    "joinedAt": "2026-02-15T08:59:00-06:00",
+    "contributionCentsPerWeek": 425,
+    "baselineDailyIncomeCents": 2950,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 11,
+      "endHour": 22
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43526,
+        "longitude": -99.16248,
+        "label": "Shopping mall pickup point"
+      },
+      {
+        "latitude": 19.42283,
+        "longitude": -99.16261,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-075",
+    "displayName": "Vendor 075",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-cuauhtemoc",
+    "paypalEmail": "member-075@example.invalid",
+    "joinedAt": "2026-07-03T08:09:00-06:00",
+    "contributionCentsPerWeek": 550,
+    "baselineDailyIncomeCents": 3950,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 6,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43131,
+        "longitude": -99.13662,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-076",
+    "displayName": "Courier 076",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-076@example.invalid",
+    "joinedAt": "2026-03-03T13:06:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3250,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.33891,
+        "longitude": -99.1549,
+        "label": "Delivery app hub"
+      },
+      {
+        "latitude": 19.32039,
+        "longitude": -99.14756,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-077",
+    "displayName": "Builder 077",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-077@example.invalid",
+    "joinedAt": "2026-05-31T20:22:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 2700,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.38519,
+        "longitude": -99.16765,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-078",
+    "displayName": "Builder 078",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-078@example.invalid",
+    "joinedAt": "2026-07-06T13:02:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 2800,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41954,
+        "longitude": -99.11218,
+        "label": "Residential construction site"
+      }
+    ]
+  },
+  {
+    "id": "member-079",
+    "displayName": "Courier 079",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-079@example.invalid",
+    "joinedAt": "2026-05-27T17:52:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 2850,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48019,
+        "longitude": -99.10106,
+        "label": "Delivery app hub"
+      },
+      {
+        "latitude": 19.48792,
+        "longitude": -99.10965,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-080",
+    "displayName": "Vendor 080",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-080@example.invalid",
+    "joinedAt": "2026-09-15T15:57:00-06:00",
+    "contributionCentsPerWeek": 200,
+    "baselineDailyIncomeCents": 2650,
+    "workSchedule": {
+      "days": [0, 3, 5, 6],
+      "startHour": 18,
+      "endHour": 24
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48316,
+        "longitude": -99.11978,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-081",
+    "displayName": "Courier 081",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-081@example.invalid",
+    "joinedAt": "2026-09-17T15:18:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 2150,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48897,
+        "longitude": -99.11144,
+        "label": "Shopping mall pickup point"
+      },
+      {
+        "latitude": 19.48252,
+        "longitude": -99.11658,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-082",
+    "displayName": "Builder 082",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-082@example.invalid",
+    "joinedAt": "2026-09-04T13:32:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 3100,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 17
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43483,
+        "longitude": -99.08687,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-083",
+    "displayName": "Courier 083",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-083@example.invalid",
+    "joinedAt": "2026-09-02T18:45:00-06:00",
+    "contributionCentsPerWeek": 450,
+    "baselineDailyIncomeCents": 3150,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48523,
+        "longitude": -99.19201,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-084",
+    "displayName": "Courier 084",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-084@example.invalid",
+    "joinedAt": "2026-02-03T20:32:00-06:00",
+    "contributionCentsPerWeek": 425,
+    "baselineDailyIncomeCents": 3050,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 12,
+      "endHour": 23
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.47682,
+        "longitude": -99.19905,
+        "label": "Delivery app hub"
+      },
+      {
+        "latitude": 19.49432,
+        "longitude": -99.17135,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-085",
+    "displayName": "Courier 085",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-085@example.invalid",
+    "joinedAt": "2025-11-04T12:07:00-06:00",
+    "contributionCentsPerWeek": 325,
+    "baselineDailyIncomeCents": 2650,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.36263,
+        "longitude": -99.16708,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-086",
+    "displayName": "Courier 086",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-086@example.invalid",
+    "joinedAt": "2026-04-11T17:07:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2600,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.43675,
+        "longitude": -99.19977,
+        "label": "Shopping mall pickup point"
+      },
+      {
+        "latitude": 19.4146,
+        "longitude": -99.19122,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-087",
+    "displayName": "Vendor 087",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-087@example.invalid",
+    "joinedAt": "2026-07-01T09:18:00-06:00",
+    "contributionCentsPerWeek": 175,
+    "baselineDailyIncomeCents": 1550,
+    "workSchedule": {
+      "days": [0, 2, 3, 4, 5, 6],
+      "startHour": 6,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41354,
+        "longitude": -99.18997,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-088",
+    "displayName": "Courier 088",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-088@example.invalid",
+    "joinedAt": "2026-05-08T17:42:00-06:00",
+    "contributionCentsPerWeek": 475,
+    "baselineDailyIncomeCents": 3350,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 11,
+      "endHour": 22
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.34066,
+        "longitude": -99.07038,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  },
+  {
+    "id": "member-089",
+    "displayName": "Builder 089",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-089@example.invalid",
+    "joinedAt": "2026-04-15T21:11:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2950,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5],
+      "startHour": 7,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.4102,
+        "longitude": -99.1931,
+        "label": "Residential construction site"
+      }
+    ]
+  },
+  {
+    "id": "member-090",
+    "displayName": "Vendor 090",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-090@example.invalid",
+    "joinedAt": "2025-12-14T08:56:00-06:00",
+    "contributionCentsPerWeek": 525,
+    "baselineDailyIncomeCents": 3800,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 19,
+      "endHour": 2
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48242,
+        "longitude": -99.19537,
+        "label": "Open-air market stall"
+      }
+    ]
+  },
+  {
+    "id": "member-091",
+    "displayName": "Courier 091",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-091@example.invalid",
+    "joinedAt": "2026-08-18T12:17:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2500,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5],
+      "startHour": 11,
+      "endHour": 22
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.33771,
+        "longitude": -99.14694,
+        "label": "Delivery app hub"
+      },
+      {
+        "latitude": 19.33005,
+        "longitude": -99.14734,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-092",
+    "displayName": "Courier 092",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-092@example.invalid",
+    "joinedAt": "2026-04-03T15:17:00-06:00",
+    "contributionCentsPerWeek": 500,
+    "baselineDailyIncomeCents": 4100,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41286,
+        "longitude": -99.18992,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-093",
+    "displayName": "Vendor 093",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-miguel-hidalgo",
+    "paypalEmail": "member-093@example.invalid",
+    "joinedAt": "2026-05-30T12:38:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 3750,
+    "workSchedule": {
+      "days": [0, 3, 5, 6],
+      "startHour": 6,
+      "endHour": 15
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.41509,
+        "longitude": -99.21185,
+        "label": "Street food stand"
+      }
+    ]
+  },
+  {
+    "id": "member-094",
+    "displayName": "Vendor 094",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-azcapotzalco",
+    "paypalEmail": "member-094@example.invalid",
+    "joinedAt": "2025-10-11T08:55:00-06:00",
+    "contributionCentsPerWeek": 300,
+    "baselineDailyIncomeCents": 2150,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 20
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.47131,
+        "longitude": -99.17644,
+        "label": "Corner stall"
+      }
+    ]
+  },
+  {
+    "id": "member-095",
+    "displayName": "Vendor 095",
+    "occupation": "street_vendor",
+    "zoneId": "cdmx-iztapalapa",
+    "paypalEmail": "member-095@example.invalid",
+    "joinedAt": "2026-06-08T12:37:00-06:00",
+    "contributionCentsPerWeek": 375,
+    "baselineDailyIncomeCents": 2750,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 8,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.35407,
+        "longitude": -99.0777,
+        "label": "Open-air market stall"
+      }
+    ]
+  },
+  {
+    "id": "member-096",
+    "displayName": "Courier 096",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-096@example.invalid",
+    "joinedAt": "2025-10-21T15:40:00-06:00",
+    "contributionCentsPerWeek": 250,
+    "baselineDailyIncomeCents": 2100,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5],
+      "startHour": 17,
+      "endHour": 1
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.3716,
+        "longitude": -99.14941,
+        "label": "Delivery app hub"
+      },
+      {
+        "latitude": 19.35904,
+        "longitude": -99.14804,
+        "label": "Restaurant pickup area"
+      }
+    ]
+  },
+  {
+    "id": "member-097",
+    "displayName": "Courier 097",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-benito-juarez",
+    "paypalEmail": "member-097@example.invalid",
+    "joinedAt": "2026-03-02T07:16:00-06:00",
+    "contributionCentsPerWeek": 625,
+    "baselineDailyIncomeCents": 4400,
+    "workSchedule": {
+      "days": [0, 1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.38134,
+        "longitude": -99.16574,
+        "label": "Restaurant pickup area"
+      },
+      {
+        "latitude": 19.37739,
+        "longitude": -99.15122,
+        "label": "Delivery app hub"
+      }
+    ]
+  },
+  {
+    "id": "member-098",
+    "displayName": "Builder 098",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-gustavo-a-madero",
+    "paypalEmail": "member-098@example.invalid",
+    "joinedAt": "2026-08-14T15:01:00-06:00",
+    "contributionCentsPerWeek": 400,
+    "baselineDailyIncomeCents": 3400,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 7,
+      "endHour": 17
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.48082,
+        "longitude": -99.10587,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-099",
+    "displayName": "Builder 099",
+    "occupation": "construction_worker",
+    "zoneId": "cdmx-venustiano-carranza",
+    "paypalEmail": "member-099@example.invalid",
+    "joinedAt": "2026-04-13T08:07:00-06:00",
+    "contributionCentsPerWeek": 350,
+    "baselineDailyIncomeCents": 2900,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 7,
+      "endHour": 17
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.4207,
+        "longitude": -99.09005,
+        "label": "Road works site"
+      }
+    ]
+  },
+  {
+    "id": "member-100",
+    "displayName": "Courier 100",
+    "occupation": "delivery_courier",
+    "zoneId": "cdmx-coyoacan",
+    "paypalEmail": "member-100@example.invalid",
+    "joinedAt": "2026-05-31T17:08:00-06:00",
+    "contributionCentsPerWeek": 400,
+    "baselineDailyIncomeCents": 3400,
+    "workSchedule": {
+      "days": [1, 2, 3, 4, 5, 6],
+      "startHour": 9,
+      "endHour": 18
+    },
+    "declaredWorkSites": [
+      {
+        "latitude": 19.33342,
+        "longitude": -99.15077,
+        "label": "Shopping mall pickup point"
+      }
+    ]
+  }
+]
