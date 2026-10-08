@@ -1,2 +1,1 @@
-// Synthetic data generators and fund simulations. Placeholder until a later task.
-export {};
+export { ManualClock, SIM_EPOCH_MS, type SimClock } from './clock.js';
