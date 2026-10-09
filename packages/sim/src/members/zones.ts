@@ -4,9 +4,10 @@ import { ZoneSchema, type Zone } from '@ecahuil/contracts';
  * Mexico City boroughs (alcaldías) used as demo zones. Mexico City has no daylight saving time
  * since 2022, so America/Mexico_City is UTC-06:00 all year.
  *
- * The centroid coordinates are approximate and for demo use only.
+ * The centroid coordinates are approximate and for demo use only. The list and every zone in it
+ * are frozen; copy them if you need to change anything.
  */
-export const zones: Zone[] = ZoneSchema.array().parse([
+export const zones: ReadonlyArray<Zone> = freezeZones([
   {
     id: 'cdmx-cuauhtemoc',
     name: 'Cuauhtémoc',
@@ -56,3 +57,11 @@ export const zones: Zone[] = ZoneSchema.array().parse([
     centroid: { latitude: 19.43, longitude: -99.1 },
   },
 ]);
+
+function freezeZones(candidates: unknown[]): ReadonlyArray<Zone> {
+  return Object.freeze(
+    ZoneSchema.array()
+      .parse(candidates)
+      .map((zone) => Object.freeze({ ...zone, centroid: Object.freeze({ ...zone.centroid }) })),
+  );
+}

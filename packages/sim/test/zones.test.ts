@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ZoneSchema } from '@ecahuil/contracts';
+import { ZoneSchema, type Zone } from '@ecahuil/contracts';
 import { zones } from '../src/members/zones.js';
 
 describe('zones', () => {
@@ -14,6 +14,24 @@ describe('zones', () => {
   it('uses unique ids and names', () => {
     expect(new Set(zones.map((zone) => zone.id)).size).toBe(zones.length);
     expect(new Set(zones.map((zone) => zone.name)).size).toBe(zones.length);
+  });
+
+  it('is frozen, list and zones alike', () => {
+    expect(Object.isFrozen(zones)).toBe(true);
+    for (const zone of zones) {
+      expect(Object.isFrozen(zone)).toBe(true);
+      expect(Object.isFrozen(zone.centroid)).toBe(true);
+    }
+    const first = zones[0] as Zone;
+    expect(() => {
+      (zones as Zone[]).push(first);
+    }).toThrow(TypeError);
+    expect(() => {
+      first.name = 'Renamed';
+    }).toThrow(TypeError);
+    expect(() => {
+      first.centroid.latitude = 0;
+    }).toThrow(TypeError);
   });
 
   it('places every zone in Mexico City', () => {
