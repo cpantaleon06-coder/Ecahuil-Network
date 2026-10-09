@@ -2,38 +2,29 @@ import { describe } from 'vitest';
 import { guardPaymentsPort } from '@ecahuil/contracts';
 import { runPaymentsPortContract } from '@ecahuil/contracts/testing';
 import { SimPaymentsAdapter } from '../src/adapters/sim-payments-adapter.js';
-import { ManualClock } from '../src/clock.js';
 
-/** A clock that moves forward on every read, so polling alone lets pending payouts settle. */
-class TickingClock extends ManualClock {
-  readonly #stepMs: number;
-
-  constructor(stepMs: number) {
-    super();
-    this.#stepMs = stepMs;
-  }
-
-  override now(): number {
-    const nowMs = super.now();
-    this.advance(this.#stepMs);
-    return nowMs;
-  }
-}
+const SETTLEMENT_DELAY_MS = 60_000;
 
 describe('SimPaymentsAdapter without a settlement delay', () => {
   runPaymentsPortContract(() => new SimPaymentsAdapter({ seed: 7, initialBalanceCents: 10_000 }));
 });
 
-describe('SimPaymentsAdapter with a settlement delay', () => {
+describe('SimPaymentsAdapter with a settlement delay, settled through the hook', () => {
   runPaymentsPortContract(
     () =>
       new SimPaymentsAdapter({
         seed: 7,
         initialBalanceCents: 10_000,
-        settlementDelayMs: 250,
-        clock: new TickingClock(50),
+        settlementDelayMs: SETTLEMENT_DELAY_MS,
       }),
-    { pollIntervalMs: 1 },
+    {
+      settle: (port) => {
+        if (port instanceof SimPaymentsAdapter) {
+          port.advanceTime(SETTLEMENT_DELAY_MS);
+        }
+        return Promise.resolve();
+      },
+    },
   );
 });
 
