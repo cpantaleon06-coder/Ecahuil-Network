@@ -140,16 +140,17 @@ After sending payouts, the suite waits for final statuses in one of two ways:
 - **Polling (default).** Without a `settle` option it polls `getPayoutStatus` every
   `pollIntervalMs` (default 100) until no payout is `pending`, for up to `settleTimeoutMs`
   (default 10 000).
-- **Settle hook.** Adapters with delayed settlement can pass `settle: () => Promise<void>`, for
-  example to advance a simulated clock or to poll a real sandbox until statuses are final. The
-  suite calls it after sending payouts and before asserting final statuses, then reads the batch
-  once: no payout may still be `pending`. The hook takes no arguments, so it reaches the current
-  port through the factory, which runs first in every test:
+- **Settle hook.** Adapters with delayed settlement can pass
+  `settle: (port: PaymentsPort) => Promise<void>`, for example to advance a simulated clock or to
+  poll a real sandbox until statuses are final. The suite calls it after sending payouts and
+  before asserting final statuses, passing the port the factory created for that test, then reads
+  the batch once: no payout may still be `pending`. A hook that takes no arguments works too.
 
   ```ts
-  let port: SimulatedPayments;
-  runPaymentsPortContract(() => (port = new SimulatedPayments({ delayMs: 60_000 })), {
-    settle: async () => port.advanceTime(60_000),
+  runPaymentsPortContract(() => new SimulatedPayments({ delayMs: 60_000 }), {
+    settle: async (port) => {
+      if (port instanceof SimulatedPayments) port.advanceTime(60_000);
+    },
   });
   ```
 
