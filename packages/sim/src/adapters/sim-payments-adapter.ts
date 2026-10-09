@@ -17,7 +17,7 @@ import { ManualClock, type SimClock } from '../clock.js';
 import { mulberry32, type Random } from '../random.js';
 
 export interface SimPaymentsAdapterOptions {
-  /** Seed for the PRNG behind `failureRate`. Default: 1. */
+  /** Seed for the PRNGs behind `failureRate` and `contributionFailureRate`. Default: 1. */
   seed?: number;
   /** Available balance at start, in integer USD cents. Default: 0. */
   initialBalanceCents?: number;
@@ -29,6 +29,10 @@ export interface SimPaymentsAdapterOptions {
   unclaimedMemberIds?: readonly string[];
   /** Members whose funded payouts always end `held`. */
   heldMemberIds?: readonly string[];
+  /** Probability, from 0 to 1, that a contribution ends `failed`. Default: 0. */
+  contributionFailureRate?: number;
+  /** Members whose contributions always end `failed`. */
+  contributionFailMemberIds?: readonly string[];
   /** Simulated milliseconds a funded payout stays `pending`. Default: 0. */
   settlementDelayMs?: number;
   /** Simulated time. Default: a ManualClock starting at SIM_EPOCH_MS. */
@@ -58,12 +62,18 @@ interface StoredBatch {
  *   its final status. Member lists win over `failureRate`. A payout that ends `failed` releases
  *   its reservation; `success`, `unclaimed` and `held` keep it.
  * - Statuses follow the clock: call `advanceTime(ms)` (or advance a shared clock) to settle.
- * - Contributions succeed at once.
+ * - Contributions settle at once: `success`, or `failed` per `contributionFailMemberIds` and
+ *   `contributionFailureRate`. A failed contribution keeps its id and amount but adds nothing to
+ *   the balance. Contributions draw from their own PRNG stream, so they never shift payout
+ *   outcomes, and each new contribution draws once even when its outcome is forced.
  * - Reusing an idempotency key with a different payload throws.
  */
 export class SimPaymentsAdapter implements PaymentsPort {
   readonly #clock: SimClock;
   readonly #random: Random;
+  readonly #contributionRandom: Random;
+  readonly #contributionFailureRate: number;
+  readonly #contributionFailMembers: ReadonlySet<string>;
   readonly #initialBalanceCents: number;
   readonly #failureRate: number;
   readonly #settlementDelayMs: number;
@@ -74,10 +84,11 @@ export class SimPaymentsAdapter implements PaymentsPort {
   #sequence = 0;
 
   constructor(options: SimPaymentsAdapterOptions = {}) {
-    const failureRate = options.failureRate ?? 0;
-    if (!(failureRate >= 0 && failureRate <= 1)) {
-      throw new RangeError(`failureRate must be between 0 and 1, got ${failureRate}`);
-    }
+    const failureRate = probability('failureRate', options.failureRate);
+    const contributionFailureRate = probability(
+      'contributionFailureRate',
+      options.contributionFailureRate,
+    );
     const settlementDelayMs = options.settlementDelayMs ?? 0;
     if (!Number.isSafeInteger(settlementDelayMs) || settlementDelayMs < 0) {
       throw new RangeError(
@@ -85,7 +96,11 @@ export class SimPaymentsAdapter implements PaymentsPort {
       );
     }
 
-    this.#random = mulberry32(options.seed ?? 1);
+    const seed = options.seed ?? 1;
+    this.#random = mulberry32(seed);
+    this.#contributionRandom = mulberry32(contributionSeed(seed));
+    this.#contributionFailureRate = contributionFailureRate;
+    this.#contributionFailMembers = new Set(options.contributionFailMemberIds ?? []);
     this.#clock = options.clock ?? new ManualClock();
     this.#initialBalanceCents = CentsSchema.parse(options.initialBalanceCents ?? 0);
     this.#failureRate = failureRate;
@@ -105,12 +120,16 @@ export class SimPaymentsAdapter implements PaymentsPort {
       const valid = CollectContributionRequestSchema.parse(request);
       let contribution = this.#contributions.get(valid.idempotencyKey);
       if (contribution === undefined) {
+        // Draw for every new contribution, so forcing one member never shifts another outcome.
+        const draw = this.#contributionRandom();
+        const failed =
+          this.#contributionFailMembers.has(valid.memberId) || draw < this.#contributionFailureRate;
         contribution = {
           id: this.#nextId('sim-contribution'),
           memberId: valid.memberId,
           amountCents: valid.amountCents,
           createdAt: toIsoTimestamp(this.#clock.now()),
-          status: 'success',
+          status: failed ? 'failed' : 'success',
         };
         this.#contributions.set(valid.idempotencyKey, contribution);
       } else if (
@@ -227,6 +246,18 @@ export class SimPaymentsAdapter implements PaymentsPort {
     this.#sequence += 1;
     return `${prefix}-${String(this.#sequence).padStart(6, '0')}`;
   }
+}
+
+function probability(name: string, value = 0): number {
+  if (!(value >= 0 && value <= 1)) {
+    throw new RangeError(`${name} must be between 0 and 1, got ${value}`);
+  }
+  return value;
+}
+
+/** Seed of the contribution stream: derived from the main seed, but a different sequence. */
+function contributionSeed(seed: number): number {
+  return (seed ^ 0x5bd1e995) >>> 0;
 }
 
 function statusAt(stored: StoredPayout, nowMs: number): PayoutStatus {
