@@ -131,9 +131,30 @@ runPaymentsPortContract(() => new MyPaymentsPort(/* fresh, funded account */), {
 
 It checks idempotent contributions, idempotent payout batches, that items exceeding the available
 balance end as `failed`, status lookup (including `null` for unknown batches), and balance
-consistency. It polls `getPayoutStatus` until no payout is `pending`. The factory is called once
-per test and must return a port with at least four times `amountCents` (default 500) available.
-Against a sandbox, `receiverEmail` must be an account that can receive payouts.
+consistency. The factory is called once per test and must return a port with at least four times
+`amountCents` (default 500) available. Against a sandbox, `receiverEmail` must be an account that
+can receive payouts.
+
+After sending payouts, the suite waits for final statuses in one of two ways:
+
+- **Polling (default).** Without a `settle` option it polls `getPayoutStatus` every
+  `pollIntervalMs` (default 100) until no payout is `pending`, for up to `settleTimeoutMs`
+  (default 10 000).
+- **Settle hook.** Adapters with delayed settlement can pass `settle: () => Promise<void>`, for
+  example to advance a simulated clock or to poll a real sandbox until statuses are final. The
+  suite calls it after sending payouts and before asserting final statuses, then reads the batch
+  once: no payout may still be `pending`. The hook takes no arguments, so it reaches the current
+  port through the factory, which runs first in every test:
+
+  ```ts
+  let port: SimulatedPayments;
+  runPaymentsPortContract(() => (port = new SimulatedPayments({ delayMs: 60_000 })), {
+    settle: async () => port.advanceTime(60_000),
+  });
+  ```
+
+`timeoutMs` caps each contract test, including the hook (default: three times `settleTimeoutMs`).
+Raise it for adapters that talk to a real network.
 
 ## Changing the contracts
 
