@@ -14,12 +14,20 @@ import type {
 interface StoredBatch {
   batchId: string;
   items: Array<{ payout: Payout; finalStatus: PayoutStatus }>;
-  lookedUp: boolean;
+  settled: boolean;
+}
+
+export interface InMemoryPaymentsPortOptions {
+  /**
+   * `on-lookup` (default): a batch settles once it has been looked up, so callers must poll.
+   * `manual`: batches stay pending until `settleAll()` is called.
+   */
+  settlement?: 'on-lookup' | 'manual';
 }
 
 /**
  * Reference PaymentsPort used to test the contract suite. Funds are reserved when a batch is sent,
- * and payouts report `pending` until their batch has been looked up once, so callers must poll.
+ * and payouts report `pending` until their batch settles.
  */
 export class InMemoryPaymentsPort implements PaymentsPort {
   #availableCents: number;
@@ -28,8 +36,18 @@ export class InMemoryPaymentsPort implements PaymentsPort {
   readonly #batchIdsByKey = new Map<string, string>();
   readonly #batches = new Map<string, StoredBatch>();
 
-  constructor(initialBalanceCents: number) {
+  readonly #settlement: 'on-lookup' | 'manual';
+
+  constructor(initialBalanceCents: number, options: InMemoryPaymentsPortOptions = {}) {
     this.#availableCents = initialBalanceCents;
+    this.#settlement = options.settlement ?? 'on-lookup';
+  }
+
+  /** Settles every batch sent so far. */
+  settleAll(): void {
+    for (const batch of this.#batches.values()) {
+      batch.settled = true;
+    }
   }
 
   collectContribution(request: CollectContributionRequest): Promise<CollectContributionResult> {
@@ -73,7 +91,7 @@ export class InMemoryPaymentsPort implements PaymentsPort {
       };
       return { payout, finalStatus: affordable ? ('success' as const) : ('failed' as const) };
     });
-    const batch: StoredBatch = { batchId, items, lookedUp: false };
+    const batch: StoredBatch = { batchId, items, settled: false };
     this.#batches.set(batchId, batch);
     this.#batchIdsByKey.set(idempotencyKey, batchId);
     return Promise.resolve(this.#view(batch));
@@ -85,7 +103,9 @@ export class InMemoryPaymentsPort implements PaymentsPort {
       return Promise.resolve(null);
     }
     const view = this.#view(batch);
-    batch.lookedUp = true;
+    if (this.#settlement === 'on-lookup') {
+      batch.settled = true;
+    }
     return Promise.resolve(view);
   }
 
@@ -101,7 +121,7 @@ export class InMemoryPaymentsPort implements PaymentsPort {
       batchId: batch.batchId,
       payouts: batch.items.map(({ payout, finalStatus }) => ({
         ...payout,
-        status: batch.lookedUp ? finalStatus : payout.status,
+        status: batch.settled ? finalStatus : payout.status,
       })),
     };
   }

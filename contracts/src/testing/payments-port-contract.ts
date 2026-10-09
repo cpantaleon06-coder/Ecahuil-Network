@@ -18,10 +18,23 @@ export interface PaymentsPortContractOptions {
   member?: { memberId: string; receiverEmail: string };
   /** Amount used for contributions and affordable payouts. Default: 500 (USD 5.00). */
   amountCents?: number;
-  /** How long to wait for payouts to leave `pending`. Default: 10 000 ms. */
+  /**
+   * Brings every pending payout to its final status, for adapters with delayed settlement: for
+   * example by advancing a simulated clock, or by polling a real sandbox until statuses are final.
+   * When provided, the suite calls it after sending payouts and before asserting final statuses,
+   * and expects `getPayoutStatus` to report no `pending` payout once it resolves. When omitted,
+   * the suite polls `getPayoutStatus` instead (see `settleTimeoutMs` and `pollIntervalMs`).
+   */
+  settle?: () => Promise<void>;
+  /** Without `settle`: how long to poll for payouts to leave `pending`. Default: 10 000 ms. */
   settleTimeoutMs?: number;
-  /** Delay between status lookups while waiting. Default: 100 ms. */
+  /** Without `settle`: delay between status lookups while polling. Default: 100 ms. */
   pollIntervalMs?: number;
+  /**
+   * Maximum duration of each contract test, including `settle`. Raise it for adapters that talk
+   * to a real network. Default: three times `settleTimeoutMs`.
+   */
+  timeoutMs?: number;
 }
 
 const DEFAULT_MEMBER = {
@@ -31,10 +44,14 @@ const DEFAULT_MEMBER = {
 
 /**
  * Registers the PaymentsPort contract tests in the calling Vitest file. `factory` must return a
- * port whose available balance is at least four times `amountCents`; it is called once per test.
+ * port whose available balance is at least four times `amountCents`; it is called once per test,
+ * before any call to `settle`.
  *
  * @example
- * runPaymentsPortContract(() => new SandboxPaymentsPort(freshSandboxAccount()));
+ * let port: SimulatedPayments;
+ * runPaymentsPortContract(() => (port = new SimulatedPayments({ delayMs: 60_000 })), {
+ *   settle: async () => port.advanceTime(60_000),
+ * });
  */
 export function runPaymentsPortContract(
   factory: PaymentsPortFactory,
@@ -44,6 +61,7 @@ export function runPaymentsPortContract(
   const amountCents = options.amountCents ?? 500;
   const settleTimeoutMs = options.settleTimeoutMs ?? 10_000;
   const pollIntervalMs = options.pollIntervalMs ?? 100;
+  const timeoutMs = options.timeoutMs ?? settleTimeoutMs * 3;
   const minimumBalanceCents = amountCents * 4;
 
   async function freshPort(): Promise<PaymentsPort> {
@@ -72,25 +90,32 @@ export function runPaymentsPortContract(
     return PayoutBatchSchema.parse(await port.sendPayouts({ requests, idempotencyKey }));
   }
 
-  /** Polls getPayoutStatus until no payout in the batch is pending. */
-  async function settle(port: PaymentsPort, batchId: string): Promise<PayoutBatch> {
-    return vi.waitFor(
-      async () => {
-        const batch = PayoutBatchLookupSchema.parse(await port.getPayoutStatus(batchId));
-        if (batch === null) {
-          throw new Error(`Batch ${batchId} is unknown`);
-        }
-        const pending = batch.payouts.filter((payout) => payout.status === 'pending').length;
-        if (pending > 0) {
-          throw new Error(`${pending} payout(s) in batch ${batchId} are still pending`);
-        }
-        return batch;
-      },
-      { timeout: settleTimeoutMs, interval: pollIntervalMs },
-    );
+  /** Reads the batch and requires that no payout in it is still pending. */
+  async function settledBatch(port: PaymentsPort, batchId: string): Promise<PayoutBatch> {
+    const batch = PayoutBatchLookupSchema.parse(await port.getPayoutStatus(batchId));
+    if (batch === null) {
+      throw new Error(`Batch ${batchId} is unknown`);
+    }
+    const pending = batch.payouts.filter((payout) => payout.status === 'pending').length;
+    if (pending > 0) {
+      throw new Error(`${pending} payout(s) in batch ${batchId} are still pending`);
+    }
+    return batch;
   }
 
-  describe('PaymentsPort contract', { timeout: settleTimeoutMs * 3 }, () => {
+  /** Waits for final statuses: through the settle hook when given, otherwise by polling. */
+  async function settle(port: PaymentsPort, batchId: string): Promise<PayoutBatch> {
+    if (options.settle !== undefined) {
+      await options.settle();
+      return settledBatch(port, batchId);
+    }
+    return vi.waitFor(() => settledBatch(port, batchId), {
+      timeout: settleTimeoutMs,
+      interval: pollIntervalMs,
+    });
+  }
+
+  describe('PaymentsPort contract', { timeout: timeoutMs }, () => {
     it('collects a contribution once when it is retried with the same idempotency key', async () => {
       const port = await freshPort();
       const before = await availableCents(port);
